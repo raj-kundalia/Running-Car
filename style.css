@@ -1,0 +1,92 @@
+*{
+    margin: 0;
+    padding: 0;
+
+}
+
+.city-outer{
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+    background: linear-gradient(-360deg, rgba(143,255,245), rgba(247,165,87))
+}
+
+/* for making day and night */
+
+.city-outer::before{
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    background: radial-gradient(rgba(230,222,222,0.5), rgba(255,255,255,0.5));
+    top: 3em;
+    content: "";
+}
+
+.cloud{
+    background: url("../Running Car/cloud.png");
+    height: 160px;
+    background-repeat: repeat-x;
+    margin-top: 3em;
+}
+
+.city-inner{
+    background: url("../Running Car/way.png");
+    position: absolute;
+    bottom: 0;
+    height: 650px;
+    width: 500%;
+    background-repeat: repeat-x;
+}
+
+.car{
+    position: absolute;
+    bottom: 15%;
+    left: 15%;
+}
+
+@keyframes cloudAnimation{
+    100%{
+        transform: translateX(1500px);
+        opacity: 0.3;
+    }
+}
+
+@keyframes cityAnimation{
+    100%{
+        transform: translateX(-2500px);
+    }
+}
+
+@keyframes carAnimation{
+    100%{
+        transform: translateY(-2px);
+    }
+    50%{
+        transform: translateY(2px);
+    }
+    0%{
+        transform: translateY(-2px);
+    }
+}
+
+.dayToNight{
+    background: linear-gradient(360deg, rgb(3, 26, 54), rgba(50,85,100));
+}
+
+.cityAnimation{
+    animation: cityAnimation 8s linear infinite;
+}
+
+.carAnimation{
+    animation: carAnimation 1s linear infinite;
+}
+
+.cloudAnimation{
+    animation: cloudAnimation 8s linear infinite;
+}
+
